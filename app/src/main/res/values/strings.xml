@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">200483task4</string>
+    <string name="information_about_user">Данные о пользователе:</string>
+    <string name="name">Имя:</string>
+    <string name="surname">Фамилия:</string>
+    <string name="patronymic">Отчество:</string>
+    <string name="birth_date">Дата рождения:</string>
+    <string name="gender">Пол:</string>
+    <string name="email">Почта:</string>
+    <string name="phone_number">Телефон:</string>
+    <string name="status">Статус:</string>
+    <string name="sale">Скидка:</string>
+    <string name="balance">Баланс:</string>
+    <string name="edit_profile">Редактировать профиль</string>
+    <string name="fqa">FAQ</string>
+    <string name="history">История</string>
+    <string name="feedback">Обратная связь</string>
+    <string name="stations">Станции</string>
+</resources>
