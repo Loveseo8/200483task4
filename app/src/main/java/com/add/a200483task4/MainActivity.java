@@ -159,13 +159,12 @@ public class MainActivity extends AppCompatActivity {
 
                         ebirth_date.setText(dialog_birth);
                     }
-                },mYear, mMonth, mDay);
+                }, mYear, mMonth, mDay);
 
                 dataPickerDialog.show();
 
             }
         });
-
 
 
         button_save.setOnClickListener(new View.OnClickListener() {
@@ -269,7 +268,6 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-
 
 
     }

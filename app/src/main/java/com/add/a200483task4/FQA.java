@@ -1,12 +1,12 @@
 package com.add.a200483task4;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ExpandableListView;
 import android.widget.ImageView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -48,7 +48,7 @@ public class FQA extends AppCompatActivity {
 
 class DataProvider {
 
-    public static HashMap<String, List<String>> getInfo(){
+    public static HashMap<String, List<String>> getInfo() {
 
         HashMap<String, List<String>> header_details = new HashMap<>();
         List<String> question1 = new ArrayList<>();

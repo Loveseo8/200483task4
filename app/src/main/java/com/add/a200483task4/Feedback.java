@@ -1,7 +1,5 @@
 package com.add.a200483task4;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -12,10 +10,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 
-import java.sql.Time;
+import androidx.appcompat.app.AppCompatActivity;
+
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Date;
 
 public class Feedback extends AppCompatActivity {
 
@@ -51,7 +49,7 @@ public class Feedback extends AppCompatActivity {
                 SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
                 Intent i = new Intent(Intent.ACTION_SEND);
                 i.setData(Uri.parse("email"));
-                String [] to = {"KO.T.E@yandex.ru"};
+                String[] to = {"KO.T.E@yandex.ru"};
                 i.putExtra(Intent.EXTRA_EMAIL, to);
                 i.putExtra(Intent.EXTRA_TEXT, formatter.format(calendar.getTime()) + "  Поступило письмо от пользователя " + user_surname + " " + user_name + " " + user_patronymic + "\n" + "На тему \"" + topic.getText().toString() + "\"\n" + "Письмо: " + text.getText().toString());
                 i.putExtra(Intent.EXTRA_SUBJECT, "Письмо от пользователя " + user_surname + " " + user_name + " " + user_patronymic);

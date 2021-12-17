@@ -60,7 +60,7 @@ public class ExpandableAdapter extends BaseExpandableListAdapter {
     @Override
     public View getGroupView(int i, boolean b, View view, ViewGroup viewGroup) {
         String list_title = (String) getGroup(i);
-        if (view == null){
+        if (view == null) {
 
             LayoutInflater layoutInflater = (LayoutInflater) this.context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             view = layoutInflater.inflate(R.layout.expandable_list_group, null);
