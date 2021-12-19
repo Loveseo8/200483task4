@@ -1,9 +1,6 @@
 package com.add.a200483task4;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.AlertDialog;
-import android.app.DatePickerDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -12,14 +9,13 @@ import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
-import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.List;
 
 public class Rent extends AppCompatActivity {
 
@@ -97,7 +93,7 @@ public class Rent extends AppCompatActivity {
         });
         rentstate = rent.getString("rentstate", "inactive");
 
-        if (rentstate.equals("active")){
+        if (rentstate.equals("active")) {
 
             setContentView(R.layout.activity_finish_rent);
 
@@ -142,7 +138,7 @@ public class Rent extends AppCompatActivity {
         return "";
     }
 
-    private void loadData(){
+    private void loadData() {
 
         powers.add("Наименование: \"Зайчик №221\" \nАртикул: ба1221 \nТариф: 1");
         powers.add("Наименование: \"Повербанк КОТЭ №70\" \nАртикул: а10007 \nТариф: 8");
@@ -187,7 +183,7 @@ public class Rent extends AppCompatActivity {
 
                 String articule = edit_article.getText().toString().trim();
 
-                if (!TextUtils.isEmpty(articule)){
+                if (!TextUtils.isEmpty(articule)) {
 
                     art.edit().putString("art", articule).commit();
                     info.setText(findarticule(articule));
