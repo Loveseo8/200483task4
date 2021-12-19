@@ -26,8 +26,9 @@ public class Rent extends AppCompatActivity {
     Button enterarticle, confirm;
     ArrayList<String> powers = new ArrayList<>();
     String a = "";
+    String rentstate;
     SharedPreferences art, rent;
-    ImageView back;
+    ImageView back, ba;
     TextView info;
 
     @Override
@@ -83,8 +84,8 @@ public class Rent extends AppCompatActivity {
                     public void onClick(View view) {
 
                         Intent i = new Intent(Rent.this, MainActivity.class);
-                        startActivity(i);
                         info.setText("");
+                        startActivity(i);
                         finish();
 
                     }
@@ -94,6 +95,36 @@ public class Rent extends AppCompatActivity {
 
             }
         });
+        rentstate = rent.getString("rentstate", "inactive");
+
+        if (rentstate.equals("active")){
+
+            setContentView(R.layout.activity_finish_rent);
+
+            ba = findViewById(R.id.ba);
+            Button finish = findViewById(R.id.finish);
+            finish.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+                    Intent i = new Intent(Rent.this, MainActivity.class);
+                    startActivity(i);
+                    rent.edit().putString("rentstate", "inactive").commit();
+                    finish();
+                }
+            });
+            ba.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+                    Intent i = new Intent(Rent.this, MainActivity.class);
+                    startActivity(i);
+                    finish();
+
+                }
+            });
+
+        }
 
     }
 
