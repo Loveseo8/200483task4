@@ -138,6 +138,7 @@ public class Rent extends AppCompatActivity {
         LayoutInflater layoutInflater = getLayoutInflater();
         final View dialogView = layoutInflater.inflate(R.layout.enter_article_dialog, null);
         dialogBuilder.setView(dialogView);
+        dialogBuilder.setCancelable(false);
 
         final EditText edit_article = dialogView.findViewById(R.id.articule);
         final Button send_articule = dialogView.findViewById(R.id.send);
