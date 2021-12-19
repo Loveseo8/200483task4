@@ -26,7 +26,7 @@ public class Rent extends AppCompatActivity {
     Button enterarticle, confirm;
     ArrayList<String> powers = new ArrayList<>();
     String a = "";
-    SharedPreferences art;
+    SharedPreferences art, rent;
     ImageView back;
     TextView info;
 
@@ -52,6 +52,7 @@ public class Rent extends AppCompatActivity {
         enterarticle = findViewById(R.id.enterarticule);
 
         art = getSharedPreferences("art", Context.MODE_PRIVATE);
+        rent = getSharedPreferences("rentstate", Context.MODE_PRIVATE);
 
 
         enterarticle.setOnClickListener(new View.OnClickListener() {
@@ -72,6 +73,7 @@ public class Rent extends AppCompatActivity {
                         startActivity(i);
                         art.edit().clear().apply();
                         info.setText("");
+                        rent.edit().putString("rentstate", "active").commit();
                         finish();
 
                     }

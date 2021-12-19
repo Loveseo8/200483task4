@@ -22,8 +22,8 @@ import java.util.Calendar;
 public class MainActivity extends AppCompatActivity {
 
     TextView faq, feedback, stations;
-    SharedPreferences name, surname, patronymic, phone, email, birth_date;
-    String user_name, user_surname, user_patronymic, user_phone, user_email, user_birth_date;
+    SharedPreferences name, surname, patronymic, phone, email, birth_date, rent;
+    String user_name, user_surname, user_patronymic, user_phone, user_email, user_birth_date, rent_state;
     TextView txt_name, txt_surname, txt_patronymic, txt_phone, txt_email, txt_birth_date, edit;
     Button startrent;
 
@@ -38,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
         phone = getSharedPreferences("phone", Context.MODE_PRIVATE);
         email = getSharedPreferences("email", Context.MODE_PRIVATE);
         birth_date = getSharedPreferences("birth_date", Context.MODE_PRIVATE);
+        rent = getSharedPreferences("rentstate", Context.MODE_PRIVATE);
 
         //name.edit().putString("name", "Наталья").commit();
 
@@ -47,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
         user_phone = phone.getString("phone", "+7(999) 999-99-99");
         user_email = email.getString("email", "usad@1c.ru");
         user_birth_date = birth_date.getString("birth_date", "16 августа 1995г");
+        rent_state = rent.getString("rentstate", "inactive");
 
         txt_name = findViewById(R.id.name);
         txt_name.setText(user_name);
@@ -71,6 +73,8 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+        if (rent_state.equals("active")) startrent.setText("Завершить аренду");
 
         faq = findViewById(R.id.faq);
         faq.setOnClickListener(new View.OnClickListener() {

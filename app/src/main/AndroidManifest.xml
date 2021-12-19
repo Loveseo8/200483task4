@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.200483task4">
         <activity
+            android:name=".History"
+            android:exported="false" />
+        <activity
             android:name=".Rent"
             android:exported="false" />
         <activity
