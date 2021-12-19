@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
     SharedPreferences name, surname, patronymic, phone, email, birth_date;
     String user_name, user_surname, user_patronymic, user_phone, user_email, user_birth_date;
     TextView txt_name, txt_surname, txt_patronymic, txt_phone, txt_email, txt_birth_date, edit;
+    Button startrent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,6 +60,17 @@ public class MainActivity extends AppCompatActivity {
         txt_email.setText(user_email);
         txt_birth_date = findViewById(R.id.birth_date);
         txt_birth_date.setText(user_birth_date);
+        startrent = findViewById(R.id.rent);
+
+        startrent.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent i = new Intent(MainActivity.this, Rent.class);
+                startActivity(i);
+
+            }
+        });
 
         faq = findViewById(R.id.faq);
         faq.setOnClickListener(new View.OnClickListener() {
