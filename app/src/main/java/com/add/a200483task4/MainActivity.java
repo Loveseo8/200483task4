@@ -21,7 +21,7 @@ import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity {
 
-    TextView faq, feedback, stations;
+    TextView faq, feedback, stations, history;
     SharedPreferences name, surname, patronymic, phone, email, birth_date, rent;
     String user_name, user_surname, user_patronymic, user_phone, user_email, user_birth_date, rent_state;
     TextView txt_name, txt_surname, txt_patronymic, txt_phone, txt_email, txt_birth_date, edit;
@@ -69,6 +69,17 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 Intent i = new Intent(MainActivity.this, Rent.class);
+                startActivity(i);
+
+            }
+        });
+
+        history = findViewById(R.id.history);
+        history.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent i = new Intent(MainActivity.this, History.class);
                 startActivity(i);
 
             }
